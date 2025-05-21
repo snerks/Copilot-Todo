@@ -61,7 +61,7 @@ function App() {
       <AppBar position="fixed" color="default" elevation={1} sx={{ width: '100%', top: 0, left: 0, mb: 4 }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Typography variant="h6" color="inherit" noWrap>
-            Todo List
+            Todo List App
           </Typography>
           <FormControlLabel
             control={<Switch checked={darkMode} onChange={() => setDarkMode(v => !v)} color="primary" />}
@@ -72,9 +72,9 @@ function App() {
       </AppBar>
       <Container maxWidth="sm" sx={{ mt: 12 }}>
         <Paper elevation={3} sx={{ p: 3 }}>
-          <Typography variant="h4" align="center" gutterBottom>
+          {/* <Typography variant="h4" align="center" gutterBottom>
             Todo List
-          </Typography>
+          </Typography> */}
           <Box display="flex" gap={1} mb={2}>
             <TextField
               fullWidth

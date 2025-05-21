@@ -20,10 +20,10 @@ test.describe("Todo List E2E", () => {
   test("can complete a todo", async ({ page }) => {
     await page.getByLabel("Add a new todo").fill("Complete Me");
     await page.getByRole("button", { name: /add/i }).click();
-    await page.getByRole("checkbox").check();
-    // Check for line-through style on the todo text
-    const todoText = page.getByTestId("todo-text");
-    await expect(todoText).toHaveCSS("text-decoration-line", "line-through");
+    await page.locator("ul").getByRole("checkbox").check();
+    // Check for line-through style on the todo text (span inside ListItemText)
+    const todoText = await page.locator('[data-testid="todo-text"]');
+    await expect(todoText).toHaveCSS("text-decoration", /line-through/);
   });
 
   test("can remove a todo", async ({ page }) => {
