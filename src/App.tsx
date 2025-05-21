@@ -79,8 +79,7 @@ function App() {
                 color="primary"
               />
               <ListItemText
-                primary={todo.text}
-                sx={{ textDecoration: todo.completed ? 'line-through' : 'none', color: todo.completed ? 'text.secondary' : 'text.primary' }}
+                primary={<span data-testid="todo-text" style={{ textDecoration: todo.completed ? 'line-through' : 'none', color: todo.completed ? '#888' : 'inherit' }}>{todo.text}</span>}
               />
             </ListItem>
           ))}
